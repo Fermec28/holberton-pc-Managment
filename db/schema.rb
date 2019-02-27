@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_040649) do
+ActiveRecord::Schema.define(version: 2019_02_27_043746) do
 
   create_table "computers", force: :cascade do |t|
     t.string "serial"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "available", default: true
+  end
+
+  create_table "confirmations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "registration_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["registration_id"], name: "index_confirmations_on_registration_id"
+    t.index ["user_id"], name: "index_confirmations_on_user_id"
   end
 
   create_table "registrations", force: :cascade do |t|
