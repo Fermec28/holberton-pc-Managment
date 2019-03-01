@@ -7,6 +7,6 @@ class Registration < ApplicationRecord
 
   private
   def update_computer_status
-    self.computer.update(available: false)
+    self.computer.update(status: :on_loan)
   end
 end

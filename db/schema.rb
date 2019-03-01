@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_153138) do
+ActiveRecord::Schema.define(version: 2019_03_01_145035) do
 
   create_table "computers", force: :cascade do |t|
     t.string "serial"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "available", default: true
+    t.integer "status", default: 0
   end
 
   create_table "confirmations", force: :cascade do |t|
