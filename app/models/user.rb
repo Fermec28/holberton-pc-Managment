@@ -6,4 +6,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :registrations
   has_many :computers, :through => :registrations
+
+  def current_pc
+    if (self.registrations.count > 0)
+      self.registrations.last.computer
+    else
+      nil
+    end
+  end
 end
