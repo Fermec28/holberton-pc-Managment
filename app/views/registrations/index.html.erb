@@ -1,17 +1,3 @@
-<h1>Hello registrations</h1>
-<h4>Computador Registrado</h4>
-<% if @mycomputer%>
-    <%= @mycomputer.serial %>
-    <%= @mycomputer.status %>
-    <%= render 'form', computer: @mycomputer, registration:@mycomputer.registrations.last%>
-<% end %>
 
-
-<h4>Listado de computadores Disponibles</h4>
-<ul>
-    <% @computers.each do |computer|%>
-        <li><%= computer.serial %><%= render 'form', computer: computer, registration: computer.registrations.new %> </li>
-    <% end %>
-</ul>
 
  
