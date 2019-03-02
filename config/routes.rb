@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'computers#index'
+  root to: 'registrations#index'
   resources :computers do
     resources :registrations
   end  

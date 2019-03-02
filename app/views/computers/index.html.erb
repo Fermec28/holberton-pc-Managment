@@ -1,15 +1,18 @@
-<h1>Hello registrations</h1>
-<h4>Computador Registrado</h4>
-<% if @mycomputer%>
-    <%= @mycomputer.serial %>
-    <%= @mycomputer.status %>
-    <%= render 'registrations/form', computer: @mycomputer, registration:@mycomputer.registrations.last%>
-<% end %>
-
-
-<h4>Listado de computadores Disponibles</h4>
 <ul>
-    <% @computers.each do |computer|%>
-        <li><%= computer.serial %><%= render 'registrations/form', computer: computer, registration: computer.registrations.new %> </li>
-    <% end %>
+<h4> Listado de computadores availables </h4>
+<% @cavailable.each do |computer|%>
+    <li><%= computer.serial%></li>
+<% end %>
+</ul>
+<ul>
+<h4>Listado de computadores on_loan</h4>
+<% @con_loane.each do |computer|%>
+    <li><%= computer.serial%></li>
+<% end %>
+</ul>
+<ul>
+<h4>Listado de computadores delivered</h4>
+<% @cdeliverede.each do |computer|%>
+    <li><%= computer.serial%></li>
+<% end %>
 </ul>
