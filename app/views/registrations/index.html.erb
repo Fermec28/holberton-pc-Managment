@@ -2,6 +2,7 @@
 <h4>Computador Registrado</h4>
 <% if @mycomputer%>
     <%= @mycomputer.serial %>
+    <%= @mycomputer.status %>
     <%= render 'form', computer: @mycomputer, registration:@mycomputer.registrations.last%>
 <% end %>
 

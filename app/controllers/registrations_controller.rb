@@ -4,13 +4,12 @@ class RegistrationsController < ApplicationController
             @mycomputer = current_user.current_pc
         end
         @computers = Computer.disponible
-        p "*"*50 
-        p @computers      
     end
 
     def update
         registration =  Registration.find(params[:id])
         registration.touch
+        registration.computer.update(status: :delivered)
         redirect_to :root
     end
 
@@ -18,10 +17,12 @@ class RegistrationsController < ApplicationController
         computer = Computer.find(params[:computer_id])
         registration = computer.registrations.new(user_id: current_user.id)
         if registration.save
-            redirect_to :root
+            p "Todo salio bien"
         else
-            p registration.errors.all
+            p registration.errors.messages
         end
+
+        redirect_to :root
     end
 
     private
