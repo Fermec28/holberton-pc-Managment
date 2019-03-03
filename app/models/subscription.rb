@@ -1,4 +1,4 @@
-class Registration < ApplicationRecord
+class Subscription < ApplicationRecord
   belongs_to :user
   belongs_to :computer
   has_one :confirmation
@@ -26,7 +26,5 @@ class Registration < ApplicationRecord
   def update_computer_status
     self.computer.update(status: :on_loan)
     self.user.update(enable_loan: false)
-  end
-
-  
+  end  
 end

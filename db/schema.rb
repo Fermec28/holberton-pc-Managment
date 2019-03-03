@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_040425) do
+ActiveRecord::Schema.define(version: 2019_03_03_004620) do
 
   create_table "computers", force: :cascade do |t|
     t.string "serial"
@@ -21,20 +21,11 @@ ActiveRecord::Schema.define(version: 2019_03_02_040425) do
 
   create_table "confirmations", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "registration_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["registration_id"], name: "index_confirmations_on_registration_id"
+    t.integer "subscription_id"
+    t.index ["subscription_id"], name: "index_confirmations_on_subscription_id"
     t.index ["user_id"], name: "index_confirmations_on_user_id"
-  end
-
-  create_table "registrations", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "computer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["computer_id"], name: "index_registrations_on_computer_id"
-    t.index ["user_id"], name: "index_registrations_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -46,6 +37,15 @@ ActiveRecord::Schema.define(version: 2019_03_02_040425) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "computer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["computer_id"], name: "index_subscriptions_on_computer_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,13 +1,17 @@
-class RegistrationsController < ApplicationController
+class SubscriptionsController < ApplicationController
     def index
-        if (current_user.current_pc && current_user.current_pc.status != 0)
+        if (current_user.current_pc && current_user.current_pc.status != "available")
+            
+
+            p current_user.current_pc.status != :available
+            current_user.current_pc.status
             @mycomputer = current_user.current_pc
         end
         @computers = Computer.disponible
     end
 
     def update
-        registration =  Registration.find(params[:id])
+        registration =  Subscription.find(params[:id])
         registration.touch
         registration.computer.update(status: :delivered)
         redirect_to :root
@@ -15,7 +19,7 @@ class RegistrationsController < ApplicationController
 
     def create
         computer = Computer.find(params[:computer_id])
-        registration = computer.registrations.new(user_id: current_user.id)
+        registration = computer.subscriptions.new(user_id: current_user.id)
         if registration.save
             p "Todo salio bien"
         else
@@ -28,6 +32,6 @@ class RegistrationsController < ApplicationController
     private
 
     def registration_parameters
-        params.require(:registration)
+        params.require(:subscription)
     end
 end

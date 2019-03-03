@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'registrations#index'
+  root to: 'subscriptions#index'
+
   resources :computers do
-    resources :registrations
+    resources :subscriptions
   end  
+  resources :subscriptions do
+    resources :confirmations
+  end
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

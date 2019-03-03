@@ -13,6 +13,9 @@
 <ul>
 <h4>Listado de computadores delivered</h4>
 <% @cdeliverede.each do |computer|%>
-    <li><%= computer.serial%></li>
+    <li>    
+        <%= computer.serial%>
+        <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
+    </li>
 <% end %>
 </ul>
