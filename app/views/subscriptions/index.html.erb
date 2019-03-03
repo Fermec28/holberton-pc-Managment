@@ -1,0 +1,15 @@
+<h1>Hello subscriptions</h1>
+<h4>Computador Registrado</h4>
+<% if @mycomputer%>
+    <%= @mycomputer.serial %>
+    <%= @mycomputer.status %>
+    <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
+<% end %>
+
+
+<h4>Listado de computadores Disponibles</h4>
+<ul>
+    <% @computers.each do |computer|%>
+        <li><%= computer.serial %> <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%></li>
+    <% end %>
+</ul>
