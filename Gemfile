@@ -69,3 +69,6 @@ gem 'jquery-rails', '>=2.3.0'
 gem 'bootstrap-sass'   #3.2.0
 gem 'bootstrap', '~> 4.1'
 gem 'autoprefixer-rails', '8.6.5'
+gem 'cancancan'
+gem 'rolify'
+

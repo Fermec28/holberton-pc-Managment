@@ -1,0 +1,21 @@
+<ul>
+<h4> Listado de computadores availables </h4>
+<% @cavailable.each do |computer|%>
+    <li><%= computer.serial%></li>
+<% end %>
+</ul>
+<ul>
+<h4>Listado de computadores on_loan</h4>
+<% @con_loane.each do |computer|%>
+    <li><%= computer.serial%></li>
+<% end %>
+</ul>
+<ul>
+<h4>Listado de computadores delivered</h4>
+<% @cdeliverede.each do |computer|%>
+    <li>    
+        <%= computer.serial%>
+        <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
+    </li>
+<% end %>
+</ul>
