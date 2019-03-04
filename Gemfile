@@ -63,5 +63,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # add devise gem to authentication
 gem 'devise'
+
+# add gem for bootstrap
+gem 'jquery-rails', '>=2.3.0'
+gem 'bootstrap-sass'   #3.2.0
+gem 'bootstrap', '~> 4.1'
+gem 'autoprefixer-rails', '8.6.5'
 gem 'cancancan'
 gem 'rolify'
+
