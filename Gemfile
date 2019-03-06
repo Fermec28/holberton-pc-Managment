@@ -67,8 +67,8 @@ gem 'devise'
 # add gem for bootstrap
 gem 'jquery-rails', '>=2.3.0'
 gem 'bootstrap-sass'   #3.2.0
-gem 'bootstrap', '~> 4.1'
-gem 'autoprefixer-rails', '8.6.5'
+gem 'bootstrap', '~> 4.3.1'
+gem 'autoprefixer-rails', '>= 9.1.0'
 gem 'cancancan'
 gem 'rolify'
 
