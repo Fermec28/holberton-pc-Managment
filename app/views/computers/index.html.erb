@@ -1,21 +1,64 @@
-<ul>
-<h4> Listado de computadores availables </h4>
-<% @cavailable.each do |computer|%>
-    <li><%= computer.serial%></li>
-<% end %>
-</ul>
-<ul>
-<h4>Listado de computadores on_loan</h4>
-<% @con_loane.each do |computer|%>
-    <li><%= computer.serial%></li>
-<% end %>
-</ul>
-<ul>
-<h4>Listado de computadores delivered</h4>
-<% @cdeliverede.each do |computer|%>
-    <li>    
-        <%= computer.serial%>
-        <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
-    </li>
-<% end %>
-</ul>
+<div class="title_h">
+    <h1 class="text-center">Computers Status</h1>
+</div>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        <h4> Listado de computadores availables </h4>
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <% @cavailable.each do |computer|%>
+                            <li class="list-group-item">
+                                <%= computer.serial%>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapsetwo">
+                        <h4>Listado de computadores on_loan</h4>
+                    </a>
+                </div>
+                <div id="collapsetwo" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <% @con_loane.each do |computer|%>
+                            <li class="list-group-item">
+                                <%= computer.serial%>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapsethree">
+                        <h4>Listado de computadores delivered</h4>
+                    </a>
+                </div>
+                <div id="collapsethree" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <% @cdeliverede.each do |computer|%>
+                            <li class="list-group-item">
+                                <%= computer.serial%>
+                                <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
