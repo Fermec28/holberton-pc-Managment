@@ -1,8 +1,88 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body
-    {
-        font-family: 'Roboto', sans-serif;
-        background: #DCDCDC;
-    }
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #DCDCDC;
+}
+
+.navbar {
+    background: #B7312C;
+}
+
+.nav-link,
+.navbar-brand {
+    color: #f4f4f4;
+    cursor: pointer;
+}
+
+.nav-link {
+    margin-right: 1em !important;
+}
+
+.nav-link:hover {
+    background: #f4f4f4;
+    color: #B7312C;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.navbar-toggler {
+    background: #fff !important;
+}
+
+.btn {
+    border: 1px solid #B7312C;
+    background: #B7312C;
+    color: #fff;
+}
+
+.section {
+    background-image: url('https://images.unsplash.com/1/type-away.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, 0.79);
+}
+
+.title_h h1 {
+    color: #B7312C;
+    position: relative;
+    margin: auto;
+    padding: 1em;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.r_list {
+    position: relative;
+    top: 30%;
+}
+
+.r_list h4 {
+    color: #10828C;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.r_list ul li {
+    color: #333333;
+}
+
+.r_list .card {
+    box-shadow: 0 0 20px #ccc;
+}
+
+.r_list .card-body {
+    padding: 1em;
+}
