@@ -1,21 +1,41 @@
-<h1>Hello subscriptions</h1>
-<div class= "container">
-    <div class ="row">
-        <div class="col-4">
-            <h4>Computador Registrado</h4>
-            <% if @mycomputer%>
-                <%= @mycomputer.serial %>
-                <%= @mycomputer.status %>
-                <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
-            <% end %>
-        </div>
-        <div class="col-8">
-            <h4>Listado de computadores Disponibles</h4>
-            <ul>    
-                <% @computers.each do |computer|%>
-                    <li><%= computer.serial %> <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%></li>
+<div class="title_h">
+    <h1 class="text-center">Welcome to subscriptions</h1>
+</div>
+<div class="row r_list">
+    <div class="col-sm-4">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4>Computador Registrado
+                </h4>
+                <% if @mycomputer%>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <%= @mycomputer.serial %>
+                            <%= @mycomputer.status %>
+                            <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
+                        </li>
+                    </ul>
+                </div>
                 <% end %>
-            </ul>
-        </div> 
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4 class="card-title">Listado de computadores Disponibles</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <% @computers.each do |computer|%>
+                    <li class="list-group-item">
+                        <%= computer.serial %>
+                        <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
