@@ -10,7 +10,7 @@
                 <% if @mycomputer%>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
+                        <li class="list-group-item  list_button">
                             <%= @mycomputer.serial %>
                             <%= @mycomputer.status %>
                             <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-4">
         <div class="card w-50">
             <div class="card-header">
                 <h4 class="card-title">Listado de computadores Disponibles</h4>
@@ -29,8 +29,8 @@
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <% @computers.each do |computer|%>
-                    <li class="list-group-item">
-                        <%= computer.serial %>
+                    <li class="list-group-item list_button">
+                        <div class="serial"><%= computer.serial %></div>
                         <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%>
                     </li>
                     <% end %>
