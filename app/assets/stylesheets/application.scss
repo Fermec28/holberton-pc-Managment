@@ -10,33 +10,37 @@ body {
     background: #B7312C;
 }
 
-.nav-link,
+.nav-item{
+    cursor: pointer;
+}
+.nav-item:hover {
+    color: #B7312C;
+}
+/*
 .navbar-brand {
     color: #f4f4f4;
-    cursor: pointer;
+    
 }
 
 .nav-link {
     margin-right: 1em !important;
 }
 
-.nav-link:hover {
-    background: #f4f4f4;
-    color: #B7312C;
-}
+
 
 .navbar-collapse {
     justify-content: flex-end;
-}
-
+}*/
+/*
 .navbar-toggler {
-    background: #fff !important;
+    background: #f4f4f4 !important;
 }
+*/
 
 .btn {
     border: 1px solid #B7312C;
     background: #B7312C;
-    color: #fff;
+    color: #f4f4f4;
 }
 
 .section {
@@ -85,4 +89,9 @@ body {
 
 .r_list .card-body {
     padding: 1em;
+}
+
+.list_button{
+    display: flex;
+    justify-content: space-between;
 }
