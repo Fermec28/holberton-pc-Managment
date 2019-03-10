@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :subscriptions
   has_many :computers, :through => :subscriptions
+  validates :name, presence: true
 
   def current_pc
     if (self.subscriptions.count > 0)
