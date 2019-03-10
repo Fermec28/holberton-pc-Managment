@@ -1,0 +1,37 @@
+<div class="title_h">
+    <h1 class="text-center">Welcome to Users Administration</h1>
+</div>
+<div class="row r_list">
+    <div class="col-sm-6">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4>Simple Users
+                </h4>                
+            </div>
+            <% if @users %>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <div class = "row txt-center">
+                                <div class="col-sm-6 "><h3>Name</h3></div>
+                                <div class="col-sm-6 "><h3>email</h3></div>
+                        </div>                    
+                        <% @users.each do |user|%>
+                            <div class = "row user-item">
+                                <div class="col-sm-6"><%=user.name%></div>
+                                <div class="col-sm-6"><%=user.email%></div>
+                            </div>
+                        <% end %>                    
+                    </ul>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4 class="card-title"> Chief Users</h4>
+            </div>
+            
+        </div>
+    </div>
+</div>

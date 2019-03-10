@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'subscriptions#index'
-
+  get 'admin', to: "users#index"
   resources :computers do
     resources :subscriptions
   end  
