@@ -1,4 +1,5 @@
 class SubscriptionsController < ApplicationController
+    load_and_authorize_resource
     def index
         if (current_user.current_pc && current_user.current_pc.status != "available")
             @mycomputer = current_user.current_pc

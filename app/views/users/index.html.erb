@@ -1,0 +1,52 @@
+<div class="title_h">
+    <h1 class="text-center">Welcome to Users Administration</h1>
+</div>
+<div class="row r_list">
+    <div class="col-sm-6">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4>Simple Users
+                </h4>                
+            </div>
+            <% if @users %>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <div class = "row txt-center">                                
+                        </div>                    
+                        <% @users.each do |user|%>
+                             <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name: <%= user.name%></h5>
+                                    <p class="card-text">Mail: <%= user.email %></p>
+                                    <%= render 'chief_user_form', user: user%>                                    
+                                </div>
+                            </div>
+                        <% end %>                    
+                    </ul>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card w-50">
+            <div class="card-header">
+                <h4 class="card-title"> Chief Users</h4>
+            </div>
+             <% if @chiefs %>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">                
+                        <% @chiefs.each do |user|%>
+                           <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name: <%= user.name%></h5>
+                                    <p class="card-text">Mail: <%= user.email %></p>
+                                    <%= render 'chief_user_form', user: user%>                                    
+                                </div>
+                            </div>
+                        <% end %>                    
+                    </ul>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
