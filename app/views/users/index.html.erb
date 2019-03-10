@@ -14,7 +14,12 @@
                         <div class = "row txt-center">                                
                         </div>                    
                         <% @users.each do |user|%>
-                            <div class = "row user-item">
+                             <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name: <%= user.name%></h5>
+                                    <p class="card-text">Mail: <%= user.email %></p>
+                                    <%= render 'chief_user_form', user: user%>                                    
+                                </div>
                             </div>
                         <% end %>                    
                     </ul>
@@ -31,7 +36,12 @@
                 <div class="card-body">
                     <ul class="list-group list-group-flush">                
                         <% @chiefs.each do |user|%>
-                            <div class = "row user-item">                                
+                           <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name: <%= user.name%></h5>
+                                    <p class="card-text">Mail: <%= user.email %></p>
+                                    <%= render 'chief_user_form', user: user%>                                    
+                                </div>
                             </div>
                         <% end %>                    
                     </ul>

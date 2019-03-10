@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'subscriptions#index'
   get 'admin', to: "users#index"
-  post 'user_role', to: "users#chief_role"
+  patch 'user_role/:id', to: "users#chief_role", as: "user_role"
   resources :computers do
     resources :subscriptions
   end  
