@@ -6,16 +6,17 @@
         <div id="accordion">
             <div class="card m-3">
                 <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        <h4> Listado de computadores availables </h4>
+                    <a class="card-link" data-toggle="collapse" href="#collapsethree">
+                        <h4>Listado de computadores delivered</h4>
                     </a>
                 </div>
-                <div id="collapseOne" class="collapse" data-parent="#accordion">
+                <div id="collapsethree" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <ul class="list-group">
-                            <% @cavailable.each do |computer|%>
+                            <% @cdeliverede.each do |computer|%>
                             <li class="list-group-item">
                                 <%= computer.serial%>
+                                <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
                             </li>
                             <% end %>
                         </ul>
@@ -42,17 +43,16 @@
             </div>
             <div class="card m-3">
                 <div class="card-header">
-                    <a class="card-link" data-toggle="collapse" href="#collapsethree">
-                        <h4>Listado de computadores delivered</h4>
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        <h4> Listado de computadores availables </h4>
                     </a>
                 </div>
-                <div id="collapsethree" class="collapse" data-parent="#accordion">
+                <div id="collapseOne" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <ul class="list-group">
-                            <% @cdeliverede.each do |computer|%>
+                            <% @cavailable.each do |computer|%>
                             <li class="list-group-item">
                                 <%= computer.serial%>
-                                <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
                             </li>
                             <% end %>
                         </ul>
