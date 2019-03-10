@@ -60,6 +60,28 @@ nav
     background-size: cover;
     background-position: center;
 }
+.card{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-header{
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
 
 .overlay {
     position: absolute;
@@ -89,7 +111,12 @@ nav
     font-size: 20px;
     font-weight: 700;
 }
-
+h4 {
+    color: #10828C;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center; 
+}
 .r_list ul li {
     color: #333333;
 }
