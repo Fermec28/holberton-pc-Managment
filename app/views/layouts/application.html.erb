@@ -21,6 +21,25 @@
   <div class="section">
     <div class="overlay"></div>
     <div class="container">
+      <div class= "cont-flash-messages">
+        <% flash.each do |key, value| %> 
+          <% if value.is_a?(Array) %>
+            <% value.each do |element|%>                            
+              <div class="alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <%= element %>                
+              </div>
+            <% end %>
+          <% else %>
+            <% key = key == 'notice'? 'info' : key %>
+            <% key = key == 'alert'? 'warning' : key %>   
+            <div class="alert alert-<%= key %>" style= "z-index: 1040;">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <%= value %>            
+            </div>
+          <% end %>        
+        <% end %>
+      </div>
       <%= yield %>
     </div>
   </div>
