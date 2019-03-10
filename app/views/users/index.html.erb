@@ -11,14 +11,10 @@
             <% if @users %>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <div class = "row txt-center">
-                                <div class="col-sm-6 "><h3>Name</h3></div>
-                                <div class="col-sm-6 "><h3>email</h3></div>
+                        <div class = "row txt-center">                                
                         </div>                    
                         <% @users.each do |user|%>
                             <div class = "row user-item">
-                                <div class="col-sm-6"><%=user.name%></div>
-                                <div class="col-sm-6"><%=user.email%></div>
                             </div>
                         <% end %>                    
                     </ul>
@@ -31,7 +27,16 @@
             <div class="card-header">
                 <h4 class="card-title"> Chief Users</h4>
             </div>
-            
+             <% if @chiefs %>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">                
+                        <% @chiefs.each do |user|%>
+                            <div class = "row user-item">                                
+                            </div>
+                        <% end %>                    
+                    </ul>
+                </div>
+            <% end %>
         </div>
     </div>
 </div>
