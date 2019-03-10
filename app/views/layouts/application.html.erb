@@ -19,13 +19,12 @@
 
 <%= render 'layouts/nav'%>
   <div class="section">
-    <div class="overlay"></div>
-    <div class="container">
+    <div class="overlay">
       <div class= "cont-flash-messages">
         <% flash.each do |key, value| %> 
           <% if value.is_a?(Array) %>
             <% value.each do |element|%>                            
-              <div class="alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
+              <div class="flash-message alert alert-<%= key %> alert-dismissible" style= "z-index: 1040;">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                 <%= element %>                
               </div>
@@ -33,13 +32,15 @@
           <% else %>
             <% key = key == 'notice'? 'info' : key %>
             <% key = key == 'alert'? 'warning' : key %>   
-            <div class="alert alert-<%= key %>" style= "z-index: 1040;">
+            <div class="flash-message alert alert-<%= key %>" style= "z-index: 1040;">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <%= value %>            
             </div>
           <% end %>        
         <% end %>
       </div>
+    </div>
+    <div class="container">      
       <%= yield %>
     </div>
   </div>

@@ -18,7 +18,7 @@ class Subscription < ApplicationRecord
 
   def user_has_be_able_to_loan
     if user_id.present? && !User.find(user_id).enable_loan
-      errors.add(:enable_loan, "can't loan computer, are you sure you give the previous computer?")
+      errors.add(:loan, ["can't loan computer.", "Are you sure you give the previous computer?"])
     end
   end
     

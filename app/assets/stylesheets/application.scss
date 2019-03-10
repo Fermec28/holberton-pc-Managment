@@ -8,10 +8,11 @@ body {
 
 .navbar {
     background: #B7312C;
-    
+    margin-bottom: 0px;
 }
 nav 
 {
+    height: 53px;
     a{
         color: #DCDCDC;
         font-size: 20px;
@@ -47,7 +48,11 @@ nav
     background: #f4f4f4 !important;
 }
 */
-
+.flash-message{
+    position: absolute;
+    top: 53px;
+    right: 0;
+}
 .btn {
     border: 1px solid #B7312C;
     background: #B7312C;
@@ -59,6 +64,7 @@ nav
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    height: calc(100vh - 53px);
 }
 .card{
     position: relative;
