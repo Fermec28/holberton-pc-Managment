@@ -20,10 +20,11 @@
                                     <%= computer.serial%>
                                 </div>
                                 <div>
-                                    <strong><%= computer.subscriptions.last.user.name %></strong>
+                                    <strong>
+                                        <%= computer.subscriptions.last.user.name %></strong>
                                 </div>
                                 <div>
-                                <%= computer.subscriptions.last.updated_at %>
+                                    <%= computer.subscriptions.last.updated_at %>
                                 </div>
                                 <div>
                                     <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
@@ -50,10 +51,11 @@
                                     <%= computer.serial%>
                                 </div>
                                 <div>
-                                    <strong><%= computer.subscriptions.last.user.name %></strong>
+                                    <strong>
+                                        <%= computer.subscriptions.last.user.name %></strong>
                                 </div>
                                 <div>
-                                <%= computer.subscriptions.last.updated_at %>
+                                    <%= computer.subscriptions.last.updated_at %>
                                 </div>
                             </li>
                             <% end %>
