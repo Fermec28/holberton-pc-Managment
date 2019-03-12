@@ -21,9 +21,11 @@ ActiveRecord::Schema.define(version: 2019_03_10_032219) do
 
   create_table "confirmations", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "registration_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "subscription_id"
+    t.index ["registration_id"], name: "index_confirmations_on_registration_id"
     t.index ["subscription_id"], name: "index_confirmations_on_subscription_id"
     t.index ["user_id"], name: "index_confirmations_on_user_id"
   end

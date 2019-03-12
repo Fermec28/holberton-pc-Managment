@@ -7,16 +7,28 @@
             <div class="card m-3">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapsethree">
-                        <h4>Listado de computadores delivered <span class="badge badge-light"><%=@cdeliverede.count %></span></h4>
+                        <h4>Listado de computadores delivered <span class="badge badge-light">
+                                <%=@cdeliverede.count %></span></h4>
                     </a>
                 </div>
                 <div id="collapsethree" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <ul class="list-group">
                             <% @cdeliverede.each do |computer|%>
-                            <li class="list-group-item">
-                                <%= computer.serial%>
-                                <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
+                            <li class="list-group-item list_button">
+                                <div>
+                                    <%= computer.serial%>
+                                </div>
+                                <div>
+                                    <strong>
+                                        <%= computer.subscriptions.last.user.name %></strong>
+                                </div>
+                                <div>
+                                    <%= computer.subscriptions.last.updated_at %>
+                                </div>
+                                <div>
+                                    <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
+                                </div>
                             </li>
                             <% end %>
                         </ul>
@@ -26,15 +38,25 @@
             <div class="card m-3">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapsetwo">
-                        <h4>Listado de computadores on_loan <span class="badge badge-light"><%= @con_loane.count %></span></h4>
+                        <h4>Listado de computadores on_loan <span class="badge badge-light">
+                                <%= @con_loane.count %></span></h4>
                     </a>
                 </div>
                 <div id="collapsetwo" class="collapse" data-parent="#accordion">
                     <div class="card-body">
                         <ul class="list-group">
                             <% @con_loane.each do |computer|%>
-                            <li class="list-group-item">
-                                <%= computer.serial%>
+                            <li class="list-group-item list_button">
+                                <div>
+                                    <%= computer.serial%>
+                                </div>
+                                <div>
+                                    <strong>
+                                        <%= computer.subscriptions.last.user.name %></strong>
+                                </div>
+                                <div>
+                                    <%= computer.subscriptions.last.updated_at %>
+                                </div>
                             </li>
                             <% end %>
                         </ul>
@@ -44,7 +66,8 @@
             <div class="card m-3">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        <h4> Listado de computadores availables <span class="badge badge-light"><%= @cavailable.count %></span> </h4>
+                        <h4> Listado de computadores availables <span class="badge badge-light">
+                                <%= @cavailable.count %></span> </h4>
                     </a>
                 </div>
                 <div id="collapseOne" class="collapse" data-parent="#accordion">
@@ -63,5 +86,5 @@
     </div>
 </div>
 <script>
-$('.collapse').collapse()
+    $('.collapse').collapse()
 </script>
