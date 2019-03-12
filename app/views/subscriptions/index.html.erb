@@ -13,7 +13,8 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item  list_button">
                             <%= @mycomputer.serial %>
-                            <%= @mycomputer.status %>
+                            <strong class="text-uppercase"><%= @mycomputer.status %></strong>
+                            <%= @mycomputer.subscriptions.last.updated_at%>
                             <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
                         </li>
                     </ul>
