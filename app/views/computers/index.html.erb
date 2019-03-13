@@ -7,78 +7,137 @@
             <div class="card m-3">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapsethree">
-                        <h4>Listado de computadores delivered <span class="badge badge-light">
+                        <h4>Computers delivered <span class="badge badge-light">
                                 <%=@cdeliverede.count %></span></h4>
                     </a>
                 </div>
                 <div id="collapsethree" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <ul class="list-group">
-                            <% @cdeliverede.each do |computer|%>
-                            <li class="list-group-item list_button">
-                                <div>
-                                    <%= computer.serial%>
-                                </div>
-                                <div>
-                                    <strong>
-                                        <%= computer.subscriptions.last.user.name %></strong>
-                                </div>
-                                <div>
-                                    <%= computer.subscriptions.last.updated_at %>
-                                </div>
-                                <div>
-                                    <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
-                                </div>
-                            </li>
-                            <% end %>
-                        </ul>
+                        <table id="dtVerticalScrollExample" class="table table-striped" cellspacing="0" width="100%">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#ID</th>
+                                    <th scope="col">SERIAL</th>
+                                    <th scope="col">BRAND</th>
+                                    <th scope="col">USER</th>
+                                    <th scope="col">DATE REGISTER</th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @cdeliverede.each do |computer|%>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <%= computer.id%></strong>
+                                    </td>
+                                    <td>
+                                        <%= computer.serial%>
+                                    </td>
+                                    <td>
+                                        <%= computer.brand%>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <%= computer.subscriptions.last.user.name %></strong>
+                                    </td>
+                                    <td>
+                                        <%= computer.subscriptions.last.updated_at %>
+                                    </td>
+                                    <td>
+                                        <%= render 'confirmations/form' , subscription: computer.subscriptions.last, confirmation: computer.subscriptions.last.build_confirmation%>
+                                    </td>
+                                </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="card m-3">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapsetwo">
-                        <h4>Listado de computadores on_loan <span class="badge badge-light">
+                        <h4>Computers on_loan <span class="badge badge-light">
                                 <%= @con_loane.count %></span></h4>
                     </a>
                 </div>
                 <div id="collapsetwo" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <ul class="list-group">
-                            <% @con_loane.each do |computer|%>
-                            <li class="list-group-item list_button">
-                                <div>
-                                    <%= computer.serial%>
-                                </div>
-                                <div>
-                                    <strong>
-                                        <%= computer.subscriptions.last.user.name %></strong>
-                                </div>
-                                <div>
-                                    <%= computer.subscriptions.last.updated_at %>
-                                </div>
-                            </li>
-                            <% end %>
-                        </ul>
+                        <table id="dtVerticalScrollExample" class="table table-striped" cellspacing="0" width="100%">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#ID</th>
+                                    <th scope="col">SERIAL</th>
+                                    <th scope="col">BRAND</th>
+                                    <th scope="col">USER</th>
+                                    <th scope="col">DATE REGISTER</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% @con_loane.each do |computer|%>
+                                <tr>
+                                    <td>
+                                        <strong>
+                                            <%= computer.id%>
+                                        </strong>
+                                    </td>
+                                    <td>
+                                        <%= computer.serial%>
+                                    </td>
+                                    <td>
+                                        <%= computer.brand%>
+                                    </td>
+                                    <td>
+                                        <strong>
+                                            <%= computer.subscriptions.last.user.name %></strong>
+                                    </td>
+                                    <td>
+                                        <%= computer.subscriptions.last.updated_at %>
+                                    </td>
+                                </tr>
+                                <% end %>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="card m-3">
                 <div class="card-header">
                     <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                        <h4> Listado de computadores availables <span class="badge badge-light">
+                        <h4> Computers available <span class="badge badge-light">
                                 <%= @cavailable.count %></span> </h4>
                     </a>
                 </div>
                 <div id="collapseOne" class="collapse" data-parent="#accordion">
                     <div class="card-body">
-                        <ul class="list-group">
-                            <% @cavailable.each do |computer|%>
-                            <li class="list-group-item">
-                                <%= computer.serial%>
-                            </li>
-                            <% end %>
-                        </ul>
+                        <table id="dtVerticalScrollExample" class="table table-striped" cellspacing="0" width="100%">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">#ID</th>
+                                    <th scope="col">SERIAL</th>
+                                    <th scope="col">BRAND</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% @cavailable.each do |computer|%>
+                                <tr>
+                                    <td class="serial">
+                                        <%= computer.id %>
+                                    </td>
+                                    <td class="serial">
+                                        <%= computer.serial %>
+                                    </td>
+                                    <td class="serial">
+                                        <%= computer.brand %>
+                                    </td>
+
+                                </tr>
+                                <% end %>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

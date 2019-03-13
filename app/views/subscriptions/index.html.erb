@@ -5,37 +5,86 @@
     <div class="col-sm-6">
         <div class="card w-50">
             <div class="card-header">
-                <h4>Computador Registrado
-                </h4>                
+                <h4>Computer Registered
+                </h4>
             </div>
             <% if @mycomputer%>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item  list_button">
-                            <%= @mycomputer.serial %>
-                            <strong class="text-uppercase"><%= @mycomputer.status %></strong>
-                            <%= @mycomputer.subscriptions.last.updated_at%>
-                            <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
-                        </li>
-                    </ul>
-                </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">SERIAL</th>
+                            <th scope="col">BRAND</th>
+                            <th scope="col">STATUS</th>
+                            <th scope="col">REGISTER DATE</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <%= @mycomputer.id %>
+                            </th>
+                            <td>
+                                <%= @mycomputer.serial %>
+                            </td>
+                            <td>
+                                <%= @mycomputer.brand %>
+                            </td>
+                            <td>
+                                <%= @mycomputer.status%>
+                            </td>
+                            <td>
+                                <%= @mycomputer.subscriptions.last.updated_at%>
+                            </td>
+                            <td>
+                                <%= render 'subscriptions/form', computer: @mycomputer, subscription:@mycomputer.subscriptions.last%>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
             <% end %>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="card w-50">
             <div class="card-header">
-                <h4 class="card-title">Listado de computadores Disponibles</h4>
+                <h4 class="card-title">Computers Avalaible</h4>
             </div>
             <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <% @computers.each do |computer|%>
-                    <li class="list-group-item list_button">
-                        <div class="serial"><%= computer.serial %></div>
-                        <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%>
-                    </li>
-                    <% end %>
-                </ul>
+                <table id="dtVerticalScrollExample" class="table table-striped" cellspacing="0" width="100%">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">SERIAL</th>
+                            <th scope="col">BRAND</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% @computers.each do |computer|%>
+                        <tr>
+                            <td class="serial">
+                                <%= computer.id %>
+                            </td>
+                            <td class="serial">
+                                <%= computer.serial %>
+                            </td>
+                            <td class="serial">
+                                <%= computer.brand %>
+                            </td>
+                            <td>
+                                <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%>
+                            </td>
+                        </tr>
+                        <% end %>
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
