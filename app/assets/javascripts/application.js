@@ -22,4 +22,9 @@
 
 $(document).ready(function () {
     $('.header').height($(window).height());
+    $('#dtVerticalScrollExample').DataTable({
+        "scrollY": "200px",
+        "scrollCollapse": true,
+        });
+        $('.dataTables_length').addClass('bs-select');
 })
