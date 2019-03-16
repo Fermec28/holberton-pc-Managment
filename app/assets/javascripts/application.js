@@ -20,11 +20,13 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
+
+// Basic example
 $(document).ready(function () {
-    $('.header').height($(window).height());
-    $('#dtVerticalScrollExample').DataTable({
-        "scrollY": "200px",
-        "scrollCollapse": true,
+    $("#myInput").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
-        $('.dataTables_length').addClass('bs-select');
-})
+    });
+});

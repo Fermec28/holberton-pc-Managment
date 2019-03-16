@@ -10,30 +10,34 @@ body {
     background: #B7312C;
     margin-bottom: 0px;
 }
-nav 
-{
+
+nav {
     height: 53px;
-    a{
+
+    a {
         color: #DCDCDC;
         font-size: 20px;
     }
-    a:hover{
+
+    a:hover {
         background-color: #eeeeee;
     }
 }
 
-.nav-item{
+.nav-item {
     cursor: pointer;
 }
+
 .nav-item:hover {
     color: #B7312C;
 }
 
-.cont-flash-messages{
+.cont-flash-messages {
     position: absolute;
     top: 53px;
     right: 0;
 }
+
 .btn {
     border: 1px solid #B7312C;
     background: #B7312C;
@@ -47,7 +51,8 @@ nav
     background-position: center;
     height: calc(100vh - 53px);
 }
-.card{
+
+.card {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -60,14 +65,15 @@ nav
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
+    border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
 }
-.card-header{
+
+.card-header {
     padding: .75rem 1.25rem;
     margin-bottom: 0;
-    background-color: rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,.125);
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
 }
 
 .overlay {
@@ -83,7 +89,7 @@ nav
     color: #B7312C;
     position: relative;
     margin: auto;
-    padding: 1em;
+    padding: 0.5em;
     font-size: 50px;
     font-weight: 700;
 }
@@ -98,12 +104,14 @@ nav
     font-size: 20px;
     font-weight: 700;
 }
+
 h4 {
     color: #10828C;
     font-size: 20px;
     font-weight: 700;
-    text-align: center; 
+    text-align: center;
 }
+
 .r_list ul li {
     color: #333333;
 }
@@ -115,27 +123,67 @@ h4 {
 .r_list .card-body {
     padding: 1em;
 }
-.scrolling{
-    overflow-y: scroll; 
-    height: 150px;
-    width: auto;
-}
 
-.list_button{
+.list_button {
     display: flex;
     justify-content: space-between;
 }
-.user-item{
+
+.user-item {
     border: 2px solid #B7312C;
     margin: 2px;
-    margin-top:4px;
+    margin-top: 4px;
     font-size: 20px;
 }
-.user-item:hover{
+
+.user-item:hover {
     cursor: pointer;
 }
-.txt-center{
+
+.txt-center {
     text-align: center;
+}
+
+.name_user {
+    color: #DCDCDC;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.table {
+    font-size: 1.3rem;
+}
+
+.header-fixed {
+    width: 100%
+}
+
+.header-fixed>thead,
+.header-fixed>tbody,
+.header-fixed>thead>tr,
+.header-fixed>tbody>tr,
+.header-fixed>thead>tr>th,
+.header-fixed>tbody>tr>td {
+    display: block;
+}
+
+.header-fixed>tbody>tr:after,
+.header-fixed>thead>tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+.header-fixed>tbody {
+    overflow-y: auto;
+    height: 150px;
+}
+
+.header-fixed>tbody>tr>td,
+.header-fixed>thead>tr>th {
+    width: 20%;
+    float: left;
 }
 
 table.dataTable thead .sorting:after,
@@ -148,5 +196,5 @@ table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
-bottom: .5em;
+    bottom: .5em;
 }
