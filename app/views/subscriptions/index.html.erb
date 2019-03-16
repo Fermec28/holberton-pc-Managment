@@ -10,7 +10,7 @@
             </div>
             <% if @mycomputer%>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-responsive">
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">#ID</th>
@@ -26,7 +26,7 @@
                             <th scope="row">
                                 <%= @mycomputer.id %>
                             </th>
-                            <td>
+                            <td class="text-uppercase">
                                 <%= @mycomputer.serial %>
                             </td>
                             <td>
@@ -55,23 +55,24 @@
                 <h4 class="card-title">Computers Avalaible</h4>
             </div>
             <div class="card-body">
-                <table id="dtVerticalScrollExample" class="table table-striped" cellspacing="0" width="100%">
+                <input class="form-control" id="myInput" type="text" placeholder="Search by id or serial number..">
+                <table class="table table-striped header-fixed" cellspacing="0" width="100%">
                     <thead class="thead-light">
                         <tr>
                             <th scope="col">#ID</th>
                             <th scope="col">SERIAL</th>
                             <th scope="col">BRAND</th>
-                            <th scope="col"></th>
+                            <th scope="col">SUBSCRIBE</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="myTable">
                         <% @computers.each do |computer|%>
                         <tr>
                             <td class="serial">
                                 <%= computer.id %>
                             </td>
-                            <td class="serial">
+                            <td class="text-uppercase">
                                 <%= computer.serial %>
                             </td>
                             <td class="serial">
