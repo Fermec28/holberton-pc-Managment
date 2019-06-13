@@ -2,10 +2,12 @@ class User < ApplicationRecord
   rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  belongs_to :campu
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :subscriptions
   has_many :computers, :through => :subscriptions
+  
   
   validates :name, presence: true
   validates :email, presence: true, format: { with: /\w+@+(holbertonschool)\.{1}[a-zA-Z]{2,}/,
