@@ -13,8 +13,9 @@ serials_csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 serials_csv.each do |row|
     serial = row['serial_number']
     brand = row['brand']
+    campus = row['campus']
 
-  Computer.find_or_create_by(serial:serial,brand:brand)
+  Computer.find_or_create_by(serial:serial,brand:brand,campu_id:campus)
  
   end
 

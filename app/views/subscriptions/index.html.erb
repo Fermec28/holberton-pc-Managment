@@ -68,6 +68,7 @@
 
                     <tbody id="myTable">
                         <% @computers.each do |computer|%>
+                        <% if computer.campu_id == current_user.campu_id%>
                         <tr>
                             <td class="serial">
                                 <%= computer.id %>
@@ -82,6 +83,7 @@
                                 <%= render 'subscriptions/form', computer: computer, subscription:computer.subscriptions.new%>
                             </td>
                         </tr>
+                        <% end %>
                         <% end %>
 
                     </tbody>

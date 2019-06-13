@@ -21,11 +21,36 @@
 //= require bootstrap-sprockets
 
 
-// Basic example
+// filter to subscriptions
 $(document).ready(function () {
     $("#myInput").on("keyup", function () {
         var value = $(this).val().toLowerCase();
         $("#myTable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+// filters to Computer status
+$(document).ready(function () {
+    $("#myInput_d").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#myTable_d tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+$(document).ready(function () {
+    $("#myInput_o").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#myTable_o tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
+$(document).ready(function () {
+    $("#myInput_a").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#myTable_a tr").filter(function () {
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });

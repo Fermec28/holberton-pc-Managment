@@ -10,13 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_10_032219) do
+ActiveRecord::Schema.define(version: 2019_06_13_040111) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "name"
+    t.string "author"
+    t.string "theme"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "campus", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "computers", force: :cascade do |t|
     t.string "serial"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
+    t.string "brand"
+    t.integer "campu_id"
   end
 
   create_table "confirmations", force: :cascade do |t|
@@ -63,6 +80,7 @@ ActiveRecord::Schema.define(version: 2019_03_10_032219) do
     t.datetime "updated_at", null: false
     t.boolean "enable_loan", default: true
     t.string "name"
+    t.integer "campu_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

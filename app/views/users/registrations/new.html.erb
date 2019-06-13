@@ -26,6 +26,13 @@
           </div>
 
           <div class="field form-group">
+            <%= f.label :campus %><br />
+            <div class="input-group">
+              <%= f.collection_select(:campu_id, Campu.all, :id, :name) %>
+            </div>
+          </div>
+
+          <div class="field form-group">
             <%= f.label :password %>
             <% if @minimum_password_length %>
             <em>(
