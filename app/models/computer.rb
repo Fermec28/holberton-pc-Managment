@@ -6,6 +6,7 @@ class Computer < ApplicationRecord
     enum status: { available: 0, on_loan: 1, delivered: 2 }    
     
     scope :computers_status, -> status { where(status: status) }
+    validates :serial, uniqueness: true
     
     def self.disponible
         self.where(status: :available)
