@@ -16,6 +16,7 @@ module HolbertonPcManagment
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     #Config time zone
+    config.action_mailer.delivery_method = :mailjet
     config.time_zone = "Bogota"
     
   end
